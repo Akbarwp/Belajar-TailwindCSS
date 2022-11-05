@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar TailwindCSS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            border: 1px solid blueviolet;
+        }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        fira: ['Fira Code'],
+                    },
+                    colors: {
+                        ucup: '#abcdef',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="ml-14">
+    <h1 class="text-3xl font-bold">Belajar Spacing</h1>
+
+    <!-- 
+        Penamaan spacing pada TailwindCSS
+        l = Left
+        r = Right
+        t = Top
+        b = Bottom
+        x = Left & Right / Horizontal
+        y = Top & Bottom / Vertical
+        Dan bisa custom ukurannya
+    -->
+    <section>
+        <!-- Margin bisa minus (-) dan Auto -->
+        <h3 class="mr-3 -ml-3">Margin</h3>
+    </section>
+
+    <section>
+        <h3 class="p-4">Padding</h3>
+    </section>
+
+    <section>
+        <!-- Sizing bisa Auto, bilangan pecahan (1/2, 1/4), Full, Screen, Max/Min, Fit -->
+        <h3 class="w-1/2 h-10">Sizing</h3>
+    </section>
+
+    <section>
+        <!-- Font Family ada: Serif, Sans, Mono, dan custom -->
+        <!-- Dapat menggunakan Arbitery: font-['nama_font'] -->
+        <!-- Typography: 
+            - Font family, size, weight, style, variant numeric.
+            - Text align, color, decoration (color, style, thickness), transform, indent.
+            - Word break, Whitespace
+        -->
+        <h3 class="font-serif text-3xl font-bold">Typography</h3>
+        
+        <p class="font-fira">by Ucup bin Slamet => 30 September 2022</p>
+        
+        <p>Lorem ipsum <a href="" class="underline font-semibold font-['Fira_Code']">dolor</a> sit amet consectetur adipisicing elit. Quasi, temporibus?</p>
+        
+        <blockquote class="italic">
+            "Lorem ipsum dolor sit amet"
+        </blockquote>
+    </section>
+
+    <section>
+        <!-- Dapat menggunakan Arbitery: text-['#color'] -->
+        <h3 class="text-indigo-600 bg-ucup underline decoration-[#ff456e]">Color</h3>
+        
+        <p class="pb-24 bg-gradient-to-br from-indigo-300 via-white to-green-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, esse?</p>
+        
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">Tulisan Berwarna</h1>
+    </section>
+
+    <section class="mt-16 font-bold text-3xl">Arbitery Variant</section>
+
+    <!-- 
+        [&>*]: -> pada elemen ini dan elemen apapun di dalamnya ...
+
+        '*' -> apapun.
+        first/last-child -> awal/akhir elemen.
+        nth-child({number}) -> pada urutan ke ? elemen.
+        '>' -> mencari bagian elemen
+
+        [&>{elemen}:{urutan elemen/odd/even}]:
+
+        Dan juga dapat memasukkan pseudo-class.
+    -->
+
+    <ul class="w-2/3 mx-auto mt-3 [&>*]:text-blue-700 [&>li:nth-child(even)]:bg-rose-300 [&>li:nth-child(5)>div>span:nth-child(2)]:bg-rose-300 [&>li:nth-child(5):hover>div>span:nth-child(2)]:bg-emerald-300">
+        <li class="bg-pink-100 rounded-lg px-3 py-7 mb-2 text-center text-slate-700 font-semibold">List 1</li>
+        <li class="bg-pink-100 rounded-lg px-3 py-7 mb-2 text-center text-slate-700 font-semibold">List 2</li>
+        <li class="bg-pink-100 rounded-lg px-3 py-7 mb-2 text-center text-slate-700 font-semibold">List 3</li>
+        <li class="bg-pink-100 rounded-lg px-3 py-7 mb-2 text-center text-slate-700 font-semibold">List 4</li>
+        <li class="bg-pink-100 rounded-lg px-3 py-7 mb-2 text-center text-slate-700 font-semibold">
+            <div>
+                <span class="inline-block w-10 h-10 bg-blue-700 mx-auto"></span>
+                <span class="inline-block w-10 h-10 bg-blue-700 mx-auto"></span>
+                <span class="inline-block w-10 h-10 bg-blue-700 mx-auto"></span>
+            </div>
+        </li>
+    </ul>
+
+
+    <div class="mb-52"></div>
+</body>
+</html>

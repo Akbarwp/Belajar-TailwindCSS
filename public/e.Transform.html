@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Tailwind</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="ml-3 mb-3 mt-24 text-2xl">Scale</section>
+
+    <!-- 
+        scale -> memperbesar/kecil ukuran. jika <100 akan memperkecil dan sebaliknya.
+    -->
+
+    <div class="w-40 h-40 bg-emerald-500 mx-auto shadow-md rounded-lg scale-50 hover:scale-100"></div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Rotate</section>
+
+    <!-- 
+        rotate -> memutarkan benda
+    -->
+
+    <div class="w-40 h-40 bg-emerald-500 mx-auto shadow-md rounded-lg rotate-45 hover:rotate-0"></div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Translate</section>
+
+    <!-- 
+        translate -> menggeser benda. Dapat hanya menggunakan salah satu poros (x/y). Dan dapat menggunakan minus (-)
+    -->
+
+    <div class="w-40 h-40 bg-emerald-500 mx-auto shadow-md rounded-lg -translate-x-7 hover:translate-y-5"></div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Skew</section>
+
+    <!-- 
+        skew -> seperti translate namun rotasi 3D. Hanya dapat 1-12
+    -->
+
+    <div class="w-40 h-40 bg-emerald-500 mx-auto shadow-md rounded-lg skew-y-12 hover:-skew-x-12"></div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Transform Origin</section>
+
+    <!-- 
+        origin -> untuk mengubah titik poros. Titik utama di tengah.
+    -->
+
+    <div class="w-40 h-40 bg-emerald-500 mx-auto shadow-md rounded-lg origin-top-left hover:rotate-12 hover:scale-125"></div>
+
+    <div class="mb-52"></div>
+</body>
+</html>

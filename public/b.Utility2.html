@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar TailwindCSS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="mt-24 ml-3 mb-3 text-2xl">Backgorund</section>
+
+    <!-- 
+        @ bg-scroll untuk scroll teks pada background
+        @ bg-local untuk scroll teks  dengan background tapi gambar ikut
+        @ bg-fixed untuk scroll teks pada background tapi gambar diam dan gambar gerak di scroll utama
+    -->
+
+    <div class="max-w-xl h-96 bg-[#fada12] mx-auto overflow-y-scroll bg-fixed" style="background-image: url('https://source.unsplash.com/1000x600?laptop')">
+        <p class="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit omnis reiciendis dolor enim laboriosam dolore aliquam corporis hic veritatis recusandae ipsam aliquid consectetur voluptates in obcaecati nulla, inventore, velit error molestiae ratione dolores maiores ab. Porro distinctio delectus ea praesentium? Laboriosam reprehenderit, assumenda nesciunt asperiores molestias id unde in perferendis laudantium quaerat eaque odio culpa fugit? Culpa aperiam praesentium eligendi suscipit illum fugit quas consequuntur error rem dicta nihil explicabo et laboriosam ipsam quasi animi impedit quaerat harum id, ratione voluptatibus debitis esse totam? Iste perferendis, aperiam rem corrupti rerum delectus aspernatur aliquam exercitationem totam. Perspiciatis delectus voluptates minima, dolorem unde odit dolores. Et mollitia praesentium dolorem quos blanditiis eveniet sequi corrupti enim ratione nobis reiciendis, porro, molestiae incidunt! Quibusdam quod nemo consequuntur earum placeat. Fugiat, facere vel eligendi, ipsam a perspiciatis natus exercitationem quasi distinctio fuga eum omnis rem ea alias odit laboriosam beatae provident iste sapiente. Sed eveniet veritatis porro in inventore beatae, adipisci placeat quos nam quidem cumque voluptate ratione ipsum animi recusandae dolor expedita! Voluptatem accusamus illo fuga earum, voluptatum eum qui saepe. Ut beatae cum adipisci nemo architecto consequatur similique repudiandae omnis atque ex corporis, aliquid earum at aliquam non animi nesciunt. Maxime, iure. Tempora!</p>
+    </div>
+
+    <!-- 
+        @ bg-auto -> hasil crop
+        @ bg-cover -> sesuai background bisa diperkecil atau diperbesar
+        @ bg-contain -> sesuai gambar dan bisa repeat
+        @ bg-{position} -> mau nempel kemana
+    -->
+    <div class="mt-24 max-w-xl h-96 bg-slate-300 mx-auto bg-contain bg-no-repeat bg-center" style="background-image: url('../img1.png')"></div>
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Border</section>
+
+    <!-- 
+        @ rounded -> xl, l, m, s, 2xl
+        @ border-{number} -> ukuran border
+        @ border-{color} -> warna
+        @ divide -> border sesuai posisi (kanan, kiri, atas, bawah)
+        @ outline -> luar dari border
+        @ ring -> seperti box shadow
+    -->
+    <div class="max-w-xl h-96 bg-slate-300 mx-auto bg-cover bg-center rounded-lg border-4 border-red-300 outline-dashed outline-blue-300" style="background-image: url('../img1.png')"></div>
+
+    <!-- 
+        @ border-separate -> untuk memisahkan border
+        @ border-spacing-{number} -> untuk memberikan jarak antar border
+    -->
+
+    <div class="px-4 py-8">
+        <table class="w-full border-separate border-spacing-3">
+            <thead class="bg-slate-200">
+                <tr class="text-center">
+                    <th class="border border-slate-500">Makanan</th>
+                    <th class="border border-slate-500">Minuman</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr>
+                    <td class="border border-slate-500">Rujak Cingur</td>
+                    <td class="border border-slate-500">Es Teh</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-500">Gado-Gado</td>
+                    <td class="border border-slate-500">Es Cao</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-500">Rawon</td>
+                    <td class="border border-slate-500">Es Kopyor</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Effect</section>
+
+    <!-- 
+        @ shadow-{ukuran/warna} -> memberi bayangan
+        @ opacity-{ukuran} -> kejelasan gambar
+        @ mix-blend-{effect} -> menggabungkan warna elemen dengan background/gambar, seperti photoshop
+        @ bg-blend-{effect} -> menggabungkan warna background dengan gambar
+
+        effect -> normal, multiply, screen, overlay, darken, lighten, color-dodge/burn, hard/soft-light, difference, exclusion, hue, saturation, color, luminosity
+    -->
+
+    <div class="max-w-xl h-96 bg-pink-700 mx-auto rounded-xl shadow-2xl shadow-teal-200 opacity-70 bg-center overflow-hidden" style="background-image: url('../img1.png')">
+        <div class="w-full h-full bg-purple-400 mix-blend-multiply"></div>
+    </div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Filters</section>
+
+    <!-- 
+        @ blur-{ukuran/number} -> efek blur
+        @ brightness-{number} -> kecerahan gambar
+        @ backdrop-{filters}-{ukuran} -> efek glass morphism
+
+        filters -> blur, brightness, contrast, grayscale, hue rotate, invert, opacity, saturate, sepia
+    -->
+
+    <div class="max-w-xl h-96 bg-slate-300 mx-auto bg-center blur-sm brightness-110 flex" style="background-image: url('../img1.png')">
+    </div>
+
+    <div class="mt-24 max-w-xl h-96 bg-slate-300 mx-auto bg-center rounded-lg flex" style="background-image: url('../img1.png')">
+        <div class="w-[200px] h-[200px] m-auto rounded-full bg-white/30 backdrop-blur-sm"></div>
+        </div>
+
+    <div class="mb-96"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Tailwind</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        };
+    </script>
+</head>
+<body class="bg-white dark:bg-slate-700">
+    <section class="title-section text-slate-800 text-center font-bold text-3xl ml-3 mt-3 dark:text-slate-200">Dark Mode</section>
+
+    <div class="max-w-lg my-10 bg-white border-slate-300 rounded-xl mx-auto p-5 shadow-md font-sans hover:bg-blue-300 group dark:hover:bg-slate-100 dark:bg-slate-500">
+        <h5 class="font-bold text-slate-700 text-lg mb-3 group-hover:text-lime-700 dark:text-slate-200 dark:group-hover:text-slate-700">Kartuku</h5>
+        <p class="text-slate-600 group-hover:text-white dark:text-slate-200 dark:group-hover:text-slate-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla molestias minima, iusto libero quidem, pariatur maxime est sint quae dolorum accusantium esse temporibus, perferendis ea fuga nesciunt dolor nobis ipsam?</p>
+    </div>
+
+    <input type="checkbox" class="invisible" id="toggle">
+    <label for="toggle">
+        <div class="w-10 h-10 mx-auto bg-slate-800 rounded-full cursor-pointer dark:bg-white"></div>
+    </label>
+
+
+    <script>
+        const checkbox = document.querySelector('#toggle');
+        const html = document.querySelector('html');
+
+        const title = document.querySelector('.title-section')
+
+        checkbox.addEventListener('click', function() {
+            // if (checkbox.checked) {
+            //     title.classList.add('dark:bg-rose-800');
+            // } else {
+            //     title.classList.remove('dark:bg-rose-800');
+            // }
+
+            checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+        });
+    </script>
+</body>
+</html>

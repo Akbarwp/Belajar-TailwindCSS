@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Tailwind</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="ml-3 mb-3 mt-24 text-2xl">Pseudo-class</section>
+
+    <!-- 
+        hover -> ketika mouse ke arah atribut
+        active -> ketika bekerja/aktif/diklik
+        focus -> ketika sudah diklik
+        first/last, odd.even, form states,
+        visited, target, only, empty, enabled/disabled, checked. default, required, valid/invalid, read-only
+    -->
+
+    <button class="my-7 mx-auto text-black p-3 rounded-lg shadow-lg font-mono font-bold block hover:bg-teal-500 active: bg-teal-400 focus:ring focus:ring-teal-300">Klik Aku!!!</button>
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Styling based on parent state </section>
+
+    <!-- group-{pseudo} -> membuat perubahan bersamaan parent -->
+
+    <div class="max-w-lg my-10 border-slate-300 rounded-xl mx-auto p-5 shadow-md font-sans hover:bg-emerald-500 group">
+        <h5 class="font-bold text-slate-700 text-lg mb-3 group-hover:text-white">Kartuku</h5>
+        <p class="text-slate-600 group-hover:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla molestias minima, iusto libero quidem, pariatur maxime est sint quae dolorum accusantium esse temporibus, perferendis ea fuga nesciunt dolor nobis ipsam?</p>
+    </div>
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Highlighted text</section>
+
+    <!-- selection -> untuk melakukan perubahan ketika memblok huruf -->
+
+    <div class="mt-3 font-mono text-justify selection:bg-lime-300 selection:text-pink-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, voluptatum officiis non explicabo laboriosam fugit exercitationem facere iste voluptas nihil laudantium assumenda dolor ipsa at magnam voluptates quos. Optio, saepe.</div>
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">First-line and first-letter</section>
+
+    <!-- 
+        @ first-line -> untuk mengubah pada baris kalimat pertama
+        @ first-letter -> untuk mengubah pada huruf pada kalimat pertama
+    -->
+
+    <div class="mt-3 font-sans text-justify first-line:uppercase first-line:tracking-widest first-letter:text-5xl first-letter:float-left first-letter:mr-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, voluptatum officiis non explicabo laboriosam fugit exercitationem facere iste voluptas nihil laudantium assumenda dolor ipsa at magnam voluptates quos. Optio, saepe.</div>
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Before and after</section>
+
+    <div class="max-w-lg border border-slate-200 rounded-lg shadow-md mx-auto font-serif p-5">
+        <form action="">
+            <div class="mb-3">
+            <label class="mb-1 text-slate-700 font-bold after:content-['*'] after:text-pink-500 after:ml-0.5" for="kata">Email</label>
+            <input class="px-3 py-2 border shadow w-full block rounded-lg focus:outline-none focus:ring-lime-400 focus:border-lime-400 invalid:text-rose-500 invalid:focus:ring-rose-400 invalid:focus:border-rose-400" type="email" name="kata" id="kata" placeholder="masukkan email....">
+            </div>
+        </form>
+    </div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Styling based on parent state </section>
+
+    <!-- peer-{pseudo} -> membuat perubahan bersamaan sibling -->
+
+    <div class="mb-96 max-w-lg border border-slate-200 rounded-lg shadow-md mx-auto font-serif p-5">
+        <form action="">
+            <div class="mb-3">
+            <label class="mb-1 text-slate-700 font-bold" for="email">Email</label>
+            <input class="px-3 py-2 border shadow w-full block rounded-lg focus:outline-none focus:ring-rose-400 focus:border-rose-400 peer" placeholder="masukkan email...." type="email" name="email" id="email">
+            <p class="text-rose-500 text-sm m-1 invisible peer-invalid:visible" >email salah!!!</p>
+            </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

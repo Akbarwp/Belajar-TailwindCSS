@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Tailwind</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+                animation: {
+                    'spin-slow': 'spin 3s linear infinite',
+                    'goyang': 'goyang 1s ease-in-out infinite'
+                },
+                keyframes: {
+                    'goyang': {
+                        '0%, 100%': {transform: 'rotate(-7deg)'},
+                        '50%': {transform: 'rotate(7deg)'}
+                    }
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <section class="ml-3 mb-3 mt-24 text-2xl">Transition</section>
+
+    <!-- 
+        @ transition -> properti yang dilihat: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter.
+
+        @ transition-{property} -> all, colors, opacity, shadows, transform.
+    -->
+
+    <div class="w-40 h-40 bg-pink-500 mx-auto shadow-md rounded-lg scale-75 hover:scale-100 hover:translate-x-14 hover:-translate-y-14 hover:rotate-45 hover:bg-purple-500 transition"></div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Menangani Transition Patah-Patah</section>
+
+    <!-- 
+        background pembungkusnya dapat dihilangkan.
+    -->
+
+    <div class="w-40 h-40 bg-blue-500 mx-auto group">
+        <div class="w-full h-full bg-pink-500 mx-auto shadow-md rounded-lg group-hover:scale-100 group-hover:translate-x-14 group-hover:-translate-y-14 group-hover:rotate-45 group-hover:bg-rose-500 transition"></div>
+    </div>
+
+    <div class="w-40 h-40 mt-20 mx-auto group">
+        <div class="w-full h-full bg-pink-500 mx-auto shadow-md rounded-lg group-hover:scale-100 group-hover:translate-x-14 group-hover:-translate-y-14 group-hover:rotate-45 group-hover:bg-rose-500 transition"></div>
+    </div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Duration</section>
+
+    <!-- 
+        duration-{number} -> memberi durasi waktu untuk transisi/animasi. Satuan milisecond (ms).
+        1 second = 1000 milisecond
+    -->
+
+    <div class="w-40 h-40 mt-20 mx-auto group">
+        <div class="w-full h-full bg-pink-500 mx-auto shadow-md rounded-lg group-hover:scale-100 group-hover:translate-x-14 group-hover:-translate-y-14 group-hover:rotate-45 group-hover:bg-rose-500 transition duration-500"></div>
+    </div>
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Timing Function</section>
+
+    <!-- 
+        ease-{property} -> memberikan jenis transisi. Berisi: linear, in, out, in-out
+    -->
+
+    <div class="w-40 h-40 mt-20 mx-auto group">
+        <div class="w-full h-full bg-pink-500 mx-auto shadow-md rounded-lg group-hover:rotate-90 
+        origin-bottom-right group-hover:bg-rose-500 transition duration-500 ease-in-out"></div>
+    </div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Delay</section>
+
+    <!-- 
+        delay-{number} -> memberikan durasi tunggu sebelum transisi.
+    -->
+
+    <div class="w-40 h-40 mt-20 mx-auto group">
+        <div class="w-full h-full bg-pink-500 mx-auto shadow-md rounded-lg group-hover:rotate-90 
+        origin-bottom-right group-hover:bg-rose-500 transition delay-300"></div>
+    </div>
+
+
+    <section class="ml-3 mb-3 mt-24 text-2xl">Animation</section>
+
+    <!-- 
+        animate-{property} -> berisi spin, ping, pulse, bounce.
+    -->
+
+    <div class="w-40 h-40 bg-pink-500 mx-auto group">
+        <div class="w-full h-full bg-rose-500 mx-auto border-slate-500 animate-spin-slow"></div>
+    </div>
+
+    <div class="w-40 h-40 bg-pink-500 mx-auto mt-28 rounded-full animate-ping"></div>
+
+    <div class="w-40 h-40 bg-pink-500 mx-auto mt-28 rounded-full animate-pulse"></div>
+
+    <div class="w-40 h-40 bg-pink-500 mx-auto mt-28 rounded-full animate-bounce"></div>
+
+    <div class="w-40 h-40 bg-pink-500 mx-auto mt-28 rounded-lg animate-goyang"></div>
+
+
+    <div class="mb-52"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*  
+    @layer {Directive}
+    base --> untuk menentukan style dasar (ukuran, ketebalan, font, dll.) 
+    components --> untuk membuat sebuah komponen baru (button, background, dll.)
+    utilities --> untuk menentukan efek-efek pada tailwind (filter)
+    @apply --> untuk membuat function baru dari utilities yang ada
+*/
+
+@layer components {
+    .grid-card {
+        @apply bg-pink-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden relative hover:scale-95 duration-1000 transition-all
+    }
+
+    .grid-card-image {
+        @apply w-full h-full bg-cover bg-center group-hover:scale-125 duration-1000 transition-all
+    }
+}
